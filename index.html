@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>666拍賣</title>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+        <script>
+			$(document).ready(function(){
+				var c = $(".box").css("background-color");
+    			$(".box").mouseenter(function(){	
+    				//$(this).not($(this).children("*")).fadeTo(0, 0.7);
+					//use fadeTo, animate here would cause all elements fade
+					$(this).css("background-color", "#EAEAEA");
+					
+				});
+				$(".box").mouseleave(function(){
+					$(this).css("background-color", c);
+				});
+			});
+			
+		</script>
+        <style>
+			.box{
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">永續交換</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="en/index.html">English</a></li>
+						<li><a href="search.html">訪客進入</a></li>
+						<li><a href="login.html">會員登入</a></li>
+						<li><a href="signup.html" class="button special">註冊</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>台灣二手交易網站</h2>
+				<p>購買二手，減少碳消耗(OR LOGO)</p>
+				<ul class="actions">
+					<li>
+						<a href="about.html" class="button big">關於我們</a>
+					</li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>登入身份</h2>
+						<p>成為會員才能享受完整交易功能</p>
+					</header>
+					<div class="row 150%">
+						<div class="4u 12u$(medium)">
+                        	<a href="login.html">
+								<section class="box">
+									<i class="icon big rounded color1 fa-cloud"></i>
+									<h3>會員</h3>
+									<p>有註冊請從此登入</p>
+								</section>
+                            </a>
+						</div>
+						<div class="4u 12u$(medium)">
+                            <a href="search.html">
+                                <section class="box">
+                                    <i class="icon big rounded color9 fa-desktop"></i>
+                                    <h3>訪客</h3>
+                                    <p>可瀏覽販賣物件</p>
+                                </section>
+                            </a>
+						</div>
+						<div class="4u$ 12u$(medium)">
+                        	<a href="about.html">
+                                <section class="box">
+                                    <i class="icon big rounded color6 fa-rocket"></i>
+                                    <h3>第三方廠商</h3>
+                                    <p>合作廠商請從此登入</p>
+                                </section>
+                            </a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>目前合作第三方廠商</h2>
+						<p>聯合多方廠商共同合作，上下游購物不卡卡</p>
+					</header>
+					<section class="profiles">
+						<div class="row">
+                            <section class="3u 6u(medium) 12u$(xsmall) profile">
+                                <a href="#">
+                                    <img src="images/profile_placeholder.gif" alt="" />
+                                    <h4>白貓宅急便</h4>
+                                </a>
+                                <p>24小時全年無休運送</p>
+                            </section>
+
+                            <section class="3u 6u$(medium) 12u$(xsmall) profile">
+                                <a href="#">
+                                    <img src="images/profile_placeholder.gif" alt="" />
+                                    <h4>FatEx</h4>
+                                </a>
+                                <p>國際貨運不卡關</p>
+                            </section>
+
+                            <section class="3u 6u(medium) 12u$(xsmall) profile">
+                                <a href="#">
+                                    <img src="images/profile_placeholder.gif" alt="" />
+                                    <h4>Zero Twenty Four</h4>
+                                </a>
+                                <p>24小時店對店運送</p>
+                            </section>
+
+                            <section class="3u$ 6u$(medium) 12u$(xsmall) profile">
+                                <a href="#">
+                                    <img src="images/profile_placeholder.gif" alt="" />
+                                    <h4>內政部警政署</h4>	
+                                </a>
+                                <p>詐騙防治與諮詢</p>
+                            </section>
+						</div>
+					</section>
+					<footer>
+						<p>不要隨意提供個人資料與操作ATM！<br>
+                        本公司不會在非營業時間主動聯繫會員，更不會要求會員操作ATM</p>
+						<ul class="actions">
+							<li>
+								<a href="#" class="button big">back to top</a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style3 special">
+				<div class="container">
+					<header class="major">
+						<h2>聯繫我們</h2>
+						<p>會員相關問題或是廠商聯繫</p>
+					</header>
+				</div>
+				<div class="container 50%">
+					<form action="#" method="post">
+						<div class="row uniform">
+							<div class="6u 12u$(small)">
+								<input name="name" id="name" value="" placeholder="Name" type="text" required>
+							</div>
+							<div class="6u$ 12u$(small)">
+								<input name="email" id="email" value="" placeholder="Email" type="email" required>
+							</div>
+							<div class="12u$">
+								<textarea name="message" id="message" placeholder="Message" rows="6" required></textarea>
+							</div>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input value="Send Message" class="special big" type="submit"></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>關於666拍賣網的二三事</h3>
+								<ul class="unstyled">
+									<li>我們是幾個熱血的大學生</li>
+																	
+									
+								</ul>
+							</section>
+							<section class="3u 6u$(medium) 12u$(small)">
+								<h3>客服</h3>
+								<ul class="unstyled">
+									<li>(一~五)8:00-16:00</li>
+									<li>(六、日)放假</li>
+									<li>信箱:1234567@gmail.com</li>
+						
+
+								</ul>
+							</section>
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>社群</h3>
+								<ul class="unstyled">
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Youtube</a></li>
+									<li><a href="#">Instagram</a></li>
+
+								</ul>
+							</section>
+							<section class="3u$ 6u$(medium) 12u$(small)">
+								<h3>新聞與資訊</h3>
+								<ul class="unstyled">
+									<li><a href="#">新聞中心</a></li>
+									<li><a href="#">about 666</a></li>
+								
+								</ul>
+							</section>
+						</div>
+					</section>
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>

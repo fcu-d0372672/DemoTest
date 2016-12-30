@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>訂單資訊確認</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+
+
+    <noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+      
+		</noscript>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#submit").click(function() {
+                if (reg.username.value == "") {
+                    alert("未輸入姓名");
+                    return false;
+                } else if (reg.cellphone.value == "") {
+                    alert("未輸入手機號碼");
+                    return false;
+                } else if (reg.phone.value == "") {
+                    alert("未輸入市話號碼");
+                    return false;
+                } else if (reg.email.value == "") {
+                    alert("未輸入信箱");
+                    return false;
+                } else if (reg.address.value == "") {
+                    alert("未輸入地址");
+                    return false;
+                } else if (!reg.pay[0].checked && !reg.pay[1].checked) {
+                    alert("未選擇付款方式");
+                    return false;
+                } else if (!reg.transport[0].checked && !reg.transport[1].checked) {
+                    alert("未選擇運送方式");
+                    return false;
+                } else reg.submit;
+
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.inputform').focus(function() {
+                $(this).css("border-color", "#006cff")
+            })
+            $('.inputform').blur(function() {
+                $(this).css("border-color", "")
+            })
+            var rule1 = /^.{3,5}$/;
+            $("#username").blur(function() {
+                if (rule1.test($(this).val())) {
+                    $('.error1').text('')
+                    $(this).css("border-color", "green")
+                } else {
+                    $('.error1').text('不符合規則，請輸入3-5個任意文字')
+                    $(this).css("border-color", "red")
+                }
+            })
+
+            var rule3 = /^09\d{2}-\d{6}$/;
+            $("#cellphone").blur(function() {
+                if (rule3.test($(this).val())) {
+                    $('.error3').text('')
+                    $(this).css("border-color", "green")
+                } else {
+                    $('.error3').text('不符合規則，請輸入「09xx-xxxxxx」')
+                    $(this).css("border-color", "red")
+                }
+            })
+            var rule4 = /^0(2|3|4|5|6|7|8)\d{0,2}-\d{6,8}$/;
+            $("#phone").blur(function() {
+                if (rule4.test($(this).val())) {
+                    $('.error4').text('')
+                    $(this).css("border-color", "green")
+                } else {
+                    $('.error4').text('不符合規則，請輸入「區碼-xxxxxx」')
+                    $(this).css("border-color", "red")
+                }
+            })
+        })
+    </script>
+    <style>
+        .cart-wrap {
+            font-size: 20px;
+        }
+
+        .wrapper_1 {
+            padding: 2em 0em 4em;
+        }
+
+        .cart_head {
+            font-size: 28px;
+        }
+
+        .input-group {
+            white-space: nowrap;
+        }
+
+        td {
+            vertical-align: middle;
+            text-align: center;
+            float: left;
+            font-size: 17px;
+            border-bottom: 1px dashed #ffffff;
+        }
+
+        .first-td {
+            width: 150px;
+            text-align: right;
+            background-color: #e7e7e7;
+        }
+
+        thead {
+            background-color: rgb(208, 208, 208);
+        }
+
+        input {
+            font-size: 17px;
+            padding: 0 5px;
+            box-shadow: inset 1px 1px 3px;
+            font-family: 微軟正黑體;
+        }
+
+        .row-align {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .speak-align {
+            height: 120px;
+            width: 425px;
+            box-shadow: inset 1px 1px 3px;
+        }
+
+        input[type=text],
+        input[tpye=email] {
+            border-radius: 5px;
+            border: 1.75px solid darkgray;
+        }
+
+        input[type=submit] {
+            height: 45px;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: bold;
+            -moz-border-radius: 12px;
+            -webkit-border-radius: 12px;
+            border-radius: 12px;
+            border: 2px solid #dcdcdc;
+            text-decoration: none;
+            padding: 0 1em;
+            background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100%);
+            background: -ms-linear-gradient( top, #ededed 5%, #dfdfdf 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+            background-color: #ededed;
+            color: #777777 !important;
+            display: inline-block;
+            box-shadow: inset 0px 0px 0px;
+        }
+
+        input[type="radio"] {
+            -moz-appearance: radio;
+            -webkit-appearance: radio;
+            -o-appearance: radio;
+            -ms-appearance: radio;
+            appearance: radio;
+            opacity: 1;
+            box-shadow: inset 0px 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">666拍賣網</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="en/index.html">English</a></li>
+                <li><a href="search.html">訪客進入</a></li>
+                <li><a href="login.html">會員登入</a></li>
+                <li><a href="signup.html" class="button special">註冊</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="wrapper_1">
+        <div class="container">
+            <header class="major">
+                <h3 class="cart_head">購物訂單填寫</h3>
+                <p align="left">
+                    <img src="cart_img/step4.gif" width="500" height="60">
+                </p>
+            </header>
+            <div class="cart-wrap">
+                <form id="message_form" name="reg" method="POST" action="http://localhost:80/templated-transit/select_submit.php">
+                    <table id="cartTable" class="cart table table-condensed">
+                        <thead>
+                            <tr>
+                                <th><label style="margin:1em 0 0.4em 0;font-size: 18px;">購買訂單填寫</label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="first-td">取貨人姓名：</td>
+                                <td>
+                                    <div class="row-align">
+                                        <input classx="inputform" name="username" id="username" placeholder="輸入姓名" style="height:28px; " type="text" size="10" maxlength="30" />
+                                    </div>
+                                    <span class="error1"></span>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">手機：</td>
+                                <td>
+                                    <div class="row-align">
+                                        <input class="inputform" name="cellphone" id="cellphone" placeholder="輸入手機號碼" style="height:28px; " type="text" size="15" maxlength="30" />
+                                    </div>
+                                    <span class="error3"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">市話：</td>
+                                <td>
+                                    <div class="row-align">
+                                        <input class="inputform" name="phone" id="phone" placeholder="輸入市話號碼" style="height:28px;" type="text" size="15" maxlength="30" />
+                                    </div>
+                                    <span class="error4"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">Email：</td>
+                                <td>
+                                    <div class="row-align">
+                                        <input class="inputform" name="email" id="email" placeholder="輸入信箱" style="height:28px;" type="email" size="30" maxlength="30" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td">通訊地址：</td>
+                                <td>
+                                    <div class="row-align">
+                                        <input class="inputform" name="address" id="address" placeholder="輸入地址" style="height:28px;" type="text" size="45" maxlength="50" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td" height="100px">付款方式：</td>
+                                <td style="width:170px;">
+                                    <div class="input-group">
+                                        <label><input name="pay" type="radio" style="height:20px; width:20px; float:left;" value="ATM" />ATM</label>
+                                        <label><input name="pay" type="radio" style="width:20px; height:20px;" value="貨到付款" />貨到付款</label>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td" height="100px">運送方式：</td>
+                                <td style="width:170px;">
+                                    <div class="input-group">
+                                        <label><input name="transport" type="radio" style="width:20px; height:20px;" value="711店到店" />711店到店</label>
+                                        <label><input name="transport" type="radio" style="width:20px; height:20px;" value="宅配到家" />宅配到家</label>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-td" height="150px">給賣家的話：</td>
+                                <td>
+                                    <div id="resizable" class="speak-align">
+                                        <textarea class="speak" name="speak" id="speak" style="height:120px;" type="text" cols="53" rows="5"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left: 64rem; margin-top: 0.4rem; ">
+                        <input id="submit" type="submit" class="css_btn_class" value="下一步，送出訂單" />
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <section class="links">
+                <div class="row">
+                    <section class="3u 6u(medium) 12u$(small)">
+                        <h3>關於666拍賣網的二三事</h3>
+                        <ul class="unstyled">
+                            <li>我們是幾個熱血的大學生</li>
+
+
+                        </ul>
+                    </section>
+                    <section class="3u 6u$(medium) 12u$(small)">
+                        <h3>客服</h3>
+                        <ul class="unstyled">
+                            <li>(一~五)8:00-16:00</li>
+                            <li>(六、日)放假</li>
+                            <li>信箱:1234567@gmail.com</li>
+
+
+                        </ul>
+                    </section>
+                    <section class="3u 6u(medium) 12u$(small)">
+                        <h3>社群</h3>
+                        <ul class="unstyled">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li><a href="#">Instagram</a></li>
+
+                        </ul>
+                    </section>
+                    <section class="3u$ 6u$(medium) 12u$(small)">
+                        <h3>新聞與資訊</h3>
+                        <ul class="unstyled">
+                            <li><a href="#">新聞中心</a></li>
+                            <li><a href="#">about 666</a></li>
+
+                        </ul>
+                    </section>
+                </div>
+            </section>
+            <div class="row">
+                <div class="8u 12u$(medium)">
+                    <ul class="copyright">
+                        <li>&copy; Untitled. All rights reserved.</li>
+                        <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+                        <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+                    </ul>
+                </div>
+                <div class="4u$ 12u$(medium)">
+                    <ul class="icons">
+                        <li>
+                            <a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

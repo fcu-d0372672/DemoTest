@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>登入</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+			
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+			
+		<script type="text/javascript">
+		
+		$(document).ready(function() 
+		{
+			$(".username").focus(function() {
+				$(".user-icon").css("left","-47px");
+			});
+			$(".username").blur(function() {
+				$(".user-icon").css("left","0px");
+			});
+			
+			$(".password").focus(function() {
+				$(".pass-icon").css("left","-47px");
+			});
+			$(".password").blur(function() {
+				$(".pass-icon").css("left","0px");
+			});
+		});
+		</script>
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">666拍賣</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>目錄</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About us</a></li>
+											<li><a href="english.html">English</a></li>
+                                            <li><a href="search.html">訪客進入</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+<div id="wrapper">
+
+	<!--SLIDE-IN ICONS-->
+    <div class="user-icon"></div>
+    <div class="pass-icon"></div>
+    <!--END SLIDE-IN ICONS-->
+
+<!--LOGIN FORM-->
+<form name="login-form" class="login-form" action="" method="post">
+
+	<!--HEADER-->
+    <div class="header">
+    <!--TITLE--><h1>Login Form</h1><!--END TITLE-->
+    <!--DESCRIPTION--><span>Fill out the form below to login to my super awesome imaginary control panel.</span><!--END DESCRIPTION-->
+    </div>
+    <!--END HEADER-->
+	
+	<!--CONTENT-->
+    <div class="content">
+	<!--USERNAME--><input name="username" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
+    <!--PASSWORD--><input name="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
+    </div>
+    <!--END CONTENT-->
+    
+    <!--FOOTER-->
+    <div class="footer">
+    <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
+    <a href="signup.html">
+    <!--REGISTER BUTTON-->
+    Register
+    
+    <!--END REGISTER BUTTON-->
+    </a>
+    </div>
+    <!--END FOOTER-->
+
+</form>
+<!--END LOGIN FORM-->
+
+</div>
+<!--END LOGIN FORM-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

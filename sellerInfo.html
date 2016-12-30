@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>賣家資訊</title>
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/hover.js"></script>
+
+    <noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+
+		</noscript>
+
+    <script>
+        $(document).ready(function() {
+            $("#good_1").hoverpulse({
+                size: 150, // 圖片縮放的大小
+                speed: 400 // 圖片變換大小的速度
+            });
+            $("#good_2").hoverpulse({
+                size: 150, // 圖片縮放的大小
+                speed: 400 // 圖片變換大小的速度
+            });
+            $("#good_3").hoverpulse({
+                size: 150, // 圖片縮放的大小
+                speed: 400 // 圖片變換大小的速度
+            });
+            $("#good_4").hoverpulse({
+                size: 150, // 圖片縮放的大小
+                speed: 400 // 圖片變換大小的速度
+            });
+        });
+        $(function() {
+            var offset = $(".cart").offset();
+            $(".go").click(function(event) {
+                var de = $(this);
+                var img = de.parent().parent().find('img').attr('src');
+                var flyer = $('<img class="u-flyer" src="' + img + '">');
+                flyer.fly({
+                    start: {
+                        left: event.pageX, //开始位置（必填）#fly元素会被设置成position: fixed
+                        top: event.pageY //开始位置（必填）
+                    },
+                    end: {
+                        left: offset.left + 10, //结束位置（必填）
+                        top: offset.top + 10, //结束位置（必填）
+                        width: 0, //结束时宽度
+                        height: 0 //结束时高度
+                    },
+                    onEnd: function() { //结束回调
+                        $("#msg").show().animate({
+                            width: '250px'
+                        }, 200).fadeOut(1000); //提示信息
+                        addcar.css("cursor", "default").removeClass('orange').unbind('click');
+                        this.destory(); //移除dom
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <style>
+        .wrapper_1 {
+            padding: 2em 0em 4em;
+        }
+
+        .wrapper_1.style1 {
+            background-color: #F5F5F5;
+            border-bottom: 1px solid rgba(144, 144, 144, 0.25);
+            border-top: 1px solid rgba(144, 144, 144, 0.25);
+        }
+
+        table tbody tr {
+            border: solid 1px rgba(144, 144, 144, 0.25);
+            border-left: 0;
+            border-right: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        table td {
+            padding: 0.75em 0.75em;
+            vertical-align: middle;
+        }
+
+        table th {
+            color: #474747;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 0 0.75em 0.75em 0.75em;
+            text-align: center;
+        }
+
+        .u-flyer {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            position: fixed;
+            z-index: 9999;
+        }
+
+        .m-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #969696;
+            z-index: 2000;
+            width: 35px;
+            height: 100%;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .cart {
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            padding: 200px 0 0 0px;
+        }
+
+        .cart span {
+            display: block;
+            width: 20px;
+            margin: 0 auto;
+        }
+
+        .cart i {
+            width: 35px;
+            height: 35px;
+            display: block;
+            background: url(car.png) no-repeat;
+        }
+
+        #msg {
+            position: fixed;
+            top: 300px;
+            right: 35px;
+            z-index: 10000;
+            width: 1px;
+            height: 52px;
+            line-height: 52px;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            background: #360;
+            display: none
+        }
+
+        input[type=submit] {
+            height: 45px;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: bold;
+            -moz-border-radius: 12px;
+            -webkit-border-radius: 12px;
+            border-radius: 12px;
+            border: 2px solid #c6c0c0;
+            text-decoration: none;
+            padding: 0 1em;
+            background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100%);
+            background: -ms-linear-gradient( top, #ededed 5%, #dfdfdf 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+            background-color: #ededed;
+            color: #777777 !important;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">666拍賣網</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="en/index.html">English</a></li>
+                <li><a href="search.html">訪客進入</a></li>
+                <li><a href="login.html">會員登入</a></li>
+                <li><a href="signup.html" class="button special">註冊</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section class="wrapper_1 style1">
+
+        <div class="container">
+            <header class="major">
+
+                <div class="box align-center">
+                    <h2 style="letter-spacing:5px; font-size: 20px;">
+              <a href="#">
+                <img src="images/profile_placeholder.gif" alt="" />賣家Trump:</a>
+                <!-- <br/> -->
+                您好！歡迎參觀我的賣場
+            </h2>
+                    <table>
+                        <td><a href="#">關於賣家</a></td>
+                        <td><a href="#">賣家評價</a></td>
+                        <td><a href="#">商品分類</a></td>
+                    </table>
+                </div>
+            </header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>商品</th>
+                        <th>資訊</th>
+                        <th>單價</th>
+                        <th>數量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="110" height="110">
+                            <img src="production_computer/pic/ASUS_X554SJ.jpg" id="good_1" width="110" height="110" style="position: absolute; top: 0px; left: 0px; height: 110px; width: 110px;">
+                        </td>
+                        <td>ASUS_X554SJ</td>
+                        <td>17,000</td>
+                        <td>10</td>
+                        <td><input type="submit" class="go" value="加入購物車" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="110" height="110">
+                            <img src="production_computer/pic/ACER_ES1-632G-C6A0.jpg" id="good_2" width="110" height="110" style="position: absolute; top: 0px; left: 0px; height: 110px; width: 110px;">
+                        </td>
+                        <td>ACER_ES1-632G-C6A0</td>
+                        <td>18,000</td>
+                        <td>5</td>
+                        <td><input type="submit" class="go" value="加入購物車" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="110" height="110">
+                            <img src="production_computer/pic/ASUS_K556UQ.jpg" id="good_3" width="110" height="110" style="position: absolute; top: 0px; left: 0px; height: 110px; width: 110px;">
+                        </td>
+                        <td>ASUS_K556UQ</td>
+                        <td>19,000</td>
+                        <td>7</td>
+                        <td><input type="submit" class="go" value="加入購物車" />
+                    </tr>
+                    <tr>
+                        <td width="110" height="110">
+                            <img src="production_computer/pic/ASUS_ZenPad_3s.jpg" id="good_4" width="110" height="110" style="position: absolute; top: 0px; left: 0px; height: 110px; width: 110px;">
+                        </td>
+                        <td>ASUS_ZenPad_3s</td>
+                        <td>20,000</td>
+                        <td>9</td>
+                        <td><input type="submit" class="go" value="加入購物車" /></td>
+                    </tr>
+                </tbody>
+
+                <!-- </div> -->
+            </table>
+            <div class="m-sidebar">
+                <div class="cart">
+                    <i id="end"></i>
+                    <span id="cc"><a href="car.html">購物車<br>↑<br>點我可到購物車</span>
+                </div>
+            </div>
+            <div id="msg">已成功加入購物車！</div>
+        </div>
+        <form action="searchlist_computer/index.html">
+            <div style="margin-left:45rem; margin-top: 0.4rem; ">
+                <input type="submit" onclick="javascript:location.href='searchlist_computer/index.html'" value="繼續購物" />
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <section class="links">
+                <div class="row">
+                    <section class="3u 6u(medium) 12u$(small)">
+                        <h3>關於666拍賣網的二三事</h3>
+                        <ul class="unstyled">
+                            <li>我們是幾個熱血的大學生</li>
+                        </ul>
+                    </section>
+                    <section class="3u 6u$(medium) 12u$(small)">
+                        <h3>客服</h3>
+                        <ul class="unstyled">
+                            <li>(一~五)8:00-16:00</li>
+                            <li>(六、日)放假</li>
+                            <li>信箱:1234567@gmail.com</li>
+
+
+                        </ul>
+                    </section>
+                    <section class="3u 6u(medium) 12u$(small)">
+                        <h3>社群</h3>
+                        <ul class="unstyled">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li><a href="#">Instagram</a></li>
+
+                        </ul>
+                    </section>
+                    <section class="3u$ 6u$(medium) 12u$(small)">
+                        <h3>新聞與資訊</h3>
+                        <ul class="unstyled">
+                            <li><a href="#">新聞中心</a></li>
+                            <li><a href="#">about 666</a></li>
+
+                        </ul>
+                    </section>
+                </div>
+            </section>
+            <div class="row">
+                <div class="8u 12u$(medium)">
+                    <ul class="copyright">
+                        <li>&copy; Untitled. All rights reserved.</li>
+                        <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+                        <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+                    </ul>
+                </div>
+                <div class="4u$ 12u$(medium)">
+                    <ul class="icons">
+                        <li>
+                            <a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+                        </li>
+                        <li>
+                            <a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
